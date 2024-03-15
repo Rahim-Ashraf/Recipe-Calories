@@ -18,6 +18,14 @@ const Recipes = ({ notify }) => {
             setRecipeItems([...recipeItems, item])
         }
     }
+    const [cookingItems, setCookingItems] = useState([])
+
+    const handleCookPreparing = (recipeItem) => {
+        const newRecipeItem = recipeItems.filter(item => recipeItem !== item)
+        setRecipeItems(newRecipeItem)
+        setCookingItems([...cookingItems,recipeItem])
+    }
+
     return (
         <div>
             <div>
@@ -32,7 +40,7 @@ const Recipes = ({ notify }) => {
                         return <Racipe key={idx} recipe={recipe} handleRecipeItems={handleRecipeItems} />
                     })}
                 </div>
-                <Sidebar recipeItems={recipeItems} />
+                <Sidebar recipeItems={recipeItems} handleCookPreparing={handleCookPreparing} cookingItems={cookingItems} />
             </div>
         </div>
     );
