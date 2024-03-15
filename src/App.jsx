@@ -1,10 +1,10 @@
+import Navbar from "./components/Navbar"
 
 function App() {
 
   return (
     <>
-
-      <h1>Recipe Calories</h1>
+      <Navbar />
 
     </>
   )
