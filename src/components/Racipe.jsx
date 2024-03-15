@@ -2,7 +2,7 @@ import { CiClock2 } from "react-icons/ci";
 import { MdOutlineLocalFireDepartment } from "react-icons/md";
 
 
-const Racipe = ({ recipe }) => {
+const Racipe = ({ recipe, handleRecipeItems }) => {
     const { recipe_image, recipe_name, short_description, ingredients, preparing_time, calories } = recipe
     return (
         <div>
@@ -35,7 +35,7 @@ const Racipe = ({ recipe }) => {
                         <p>{calories}</p>
                     </div>
                 </div>
-                <button className="btn rounded-full bg-[#0BE58A]">Want to Cook</button>
+                <button onClick={() => handleRecipeItems(recipe)} className="btn rounded-full bg-[#0BE58A]">Want to Cook</button>
             </div>
         </div>
     );

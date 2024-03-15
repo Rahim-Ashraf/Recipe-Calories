@@ -2,13 +2,22 @@ import { useEffect, useState } from "react";
 import Racipe from "./Racipe";
 import Sidebar from "./Sidebar";
 
-const Recipes = () => {
+const Recipes = ({ notify }) => {
     const [recipes, setRecipes] = useState([])
     useEffect(() => {
         fetch("data.json")
             .then(res => res.json())
             .then(data => setRecipes(data))
     }, [])
+    const [recipeItems, setRecipeItems] = useState([])
+    const handleRecipeItems = item => {
+        if (recipeItems.includes(item)) {
+            notify()
+        }
+        else {
+            setRecipeItems([...recipeItems, item])
+        }
+    }
     return (
         <div>
             <div>
@@ -17,13 +26,13 @@ const Recipes = () => {
                     tantalize your taste buds and inspire your inner chef.
                 </p>
             </div>
-            <div className="flex gap-8 my-8">
+            <div className="lg:flex gap-8 my-8">
                 <div className="lg:w-3/5 grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {recipes.map((recipe, idx) => {
-                        return <Racipe key={idx} recipe={recipe} />
+                        return <Racipe key={idx} recipe={recipe} handleRecipeItems={handleRecipeItems} />
                     })}
                 </div>
-                <Sidebar />
+                <Sidebar recipeItems={recipeItems} />
             </div>
         </div>
     );
