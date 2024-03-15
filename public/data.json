@@ -8,13 +8,12 @@
             "150g pancetta",
             "3 large eggs",
             "50g grated Parmesan cheese",
-            "50g grated Pecorino Romano cheese",
             "2 cloves garlic",
             "Salt and pepper to taste"
         ],
         "preparing_time": "25 min",
         "calories": "480 calories",
-        "recipe_image": "./assets/images/spaghetti_carbonara.jpg"
+        "recipe_image": "/assets/images/spaghetti_carbonara.jpg"
     },
     {
         "recipe_id": "2",
@@ -26,8 +25,6 @@
             "1 red bell pepper, sliced",
             "1 yellow bell pepper, sliced",
             "150g snow peas",
-            "3 tablespoons soy sauce",
-            "2 tablespoons oyster sauce",
             "2 cloves garlic, minced",
             "1 teaspoon ginger, minced",
             "2 tablespoons vegetable oil"
@@ -53,27 +50,6 @@
         "recipe_image": "./assets/images/caprese_salad.jpg"
     },
     {
-        "recipe_id": "4",
-        "recipe_name": "Vegetable Curry",
-        "short_description": "Hearty vegetarian curry with a variety of vegetables",
-        "ingredients": [
-            "1 large onion, chopped",
-            "2 cloves garlic, minced",
-            "1 tablespoon ginger, minced",
-            "2 carrots, diced",
-            "1 large potato, diced",
-            "1 cup cauliflower florets",
-            "1 cup green peas",
-            "400ml coconut milk",
-            "2 tablespoons curry powder",
-            "Salt and pepper to taste",
-            "2 tablespoons vegetable oil"
-        ],
-        "preparing_time": "35 min",
-        "calories": "280 calories",
-        "recipe_image": "./assets/images/vegetable_curry.jpg"
-    },
-    {
         "recipe_id": "5",
         "recipe_name": "Grilled Salmon",
         "short_description": "Delicious and healthy grilled salmon fillets",
@@ -89,6 +65,24 @@
         "recipe_image": "./assets/images/grilled_salmon.jpg"
     },
     {
+        "recipe_id": "4",
+        "recipe_name": "Vegetable Curry",
+        "short_description": "Hearty vegetarian curry with a variety of vegetables",
+        "ingredients": [
+            "1 large onion, chopped",
+            "2 cloves garlic, minced",
+            "2 carrots, diced",
+            "1 large potato, diced",
+            "1 cup green peas",
+            "400ml coconut milk",
+            "Salt and pepper to taste",
+            "2 tablespoons vegetable oil"
+        ],
+        "preparing_time": "35 min",
+        "calories": "280 calories",
+        "recipe_image": "./assets/images/vegetable_curry.jpg"
+    },
+    {
         "recipe_id": "6",
         "recipe_name": "Mushroom Risotto",
         "short_description": "Creamy and savory Italian rice dish with mushrooms",
@@ -98,10 +92,7 @@
             "1 onion, finely chopped",
             "2 cloves garlic, minced",
             "1 liter vegetable broth",
-            "50g grated Parmesan cheese",
-            "2 tablespoons butter",
-            "2 tablespoons olive oil",
-            "Salt and pepper to taste"
+            "50g grated Parmesan cheese"
         ],
         "preparing_time": "40 min",
         "calories": "380 calories",

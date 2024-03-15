@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Racipe from "./Racipe";
+import Sidebar from "./Sidebar";
 
 const Recipes = () => {
     const [recipes, setRecipes] = useState([])
@@ -15,10 +17,14 @@ const Recipes = () => {
                     tantalize your taste buds and inspire your inner chef.
                 </p>
             </div>
-            {recipes.map(recipe => {
-                console.log(recipe)
-                return <h1 key={recipe.recipe_id}>hello</h1>
-            })}
+            <div className="flex gap-8 my-8">
+                <div className="lg:w-3/5 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {recipes.map((recipe, idx) => {
+                        return <Racipe key={idx} recipe={recipe} />
+                    })}
+                </div>
+                <Sidebar />
+            </div>
         </div>
     );
 };
