@@ -10,21 +10,32 @@ const Recipes = ({ notify }) => {
             .then(data => setRecipes(data))
     }, [])
     const [recipeItems, setRecipeItems] = useState([])
+    let [itemsIncluded, setItemsIncluded] = useState([])
     const handleRecipeItems = item => {
-        if (recipeItems.includes(item)) {
+        if (itemsIncluded.includes(item)) {
             notify()
+        } else {
+            setItemsIncluded([...itemsIncluded, item])
         }
-        else {
+        if (!itemsIncluded.includes(item)) {
             setRecipeItems([...recipeItems, item])
         }
+
     }
     const [cookingItems, setCookingItems] = useState([])
+    const [totalTime, setTotalTime] = useState(0)
+    const [totalCalories, setTotalCalories] = useState(0)
 
     const handleCookPreparing = (recipeItem) => {
         const newRecipeItem = recipeItems.filter(item => recipeItem !== item)
         setRecipeItems(newRecipeItem)
-        setCookingItems([...cookingItems,recipeItem])
+        setCookingItems([...cookingItems, recipeItem])
+        const time = parseFloat(recipeItem.preparing_time)
+        const calories = parseFloat(recipeItem.calories)
+        setTotalTime(totalTime + time)
+        setTotalCalories(totalCalories + calories)
     }
+
 
     return (
         <div>
@@ -40,7 +51,12 @@ const Recipes = ({ notify }) => {
                         return <Racipe key={idx} recipe={recipe} handleRecipeItems={handleRecipeItems} />
                     })}
                 </div>
-                <Sidebar recipeItems={recipeItems} handleCookPreparing={handleCookPreparing} cookingItems={cookingItems} />
+                <Sidebar recipeItems={recipeItems}
+                    handleCookPreparing={handleCookPreparing}
+                    cookingItems={cookingItems}
+                    totalTime={totalTime}
+                    totalCalories={totalCalories}
+                />
             </div>
         </div>
     );
