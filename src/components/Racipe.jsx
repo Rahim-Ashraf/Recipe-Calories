@@ -1,6 +1,6 @@
 import { CiClock2 } from "react-icons/ci";
 import { MdOutlineLocalFireDepartment } from "react-icons/md";
-
+import PropTypes from 'prop-types';
 
 const Racipe = ({ recipe, handleRecipeItems }) => {
     const { recipe_image, recipe_name, short_description, ingredients, preparing_time, calories } = recipe
@@ -40,5 +40,10 @@ const Racipe = ({ recipe, handleRecipeItems }) => {
         </div>
     );
 };
+
+Racipe.propTypes ={
+    recipe: PropTypes.object,
+    handleRecipeItems: PropTypes.func
+}
 
 export default Racipe;

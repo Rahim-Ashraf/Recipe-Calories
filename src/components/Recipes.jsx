@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Racipe from "./Racipe";
 import Sidebar from "./Sidebar";
+import PropTypes from 'prop-types';
 
 const Recipes = ({ notify }) => {
     const [recipes, setRecipes] = useState([])
@@ -61,5 +62,9 @@ const Recipes = ({ notify }) => {
         </div>
     );
 };
+
+Recipes.propTypes ={
+    notify: PropTypes.func.isRequired
+}
 
 export default Recipes;
